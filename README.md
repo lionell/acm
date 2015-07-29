@@ -2,8 +2,6 @@
 
 Hi! Nice to meet you at my solution archive. Here you can find code of many problems. 
 
-<i>P.S. As you know in CP time of coding is important, so solutions are <b>not</b> full of comments.</i>
-
 ----------
 
 ### Resources
@@ -22,8 +20,7 @@ Resource                | Account
 [QBit][8]               | ---
 [Russian Code Cups][9]  | ---
 
-
-
+<i>P.S. As you know in CP time of coding is important, so solutions are <b>not</b> full of comments.</i>
 
   [1]: http://codeforces.com/ "Codeforces"
   [2]: https://www.topcoder.com/ "TopCoder"
