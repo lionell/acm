@@ -2,7 +2,7 @@
 
 Hi! Nice to meet you at my solution archive. Here you can find code of many problems. 
 
-> P.S. As you know in CP time of coding is important, so solutions are **not** full of comments.
+*P.S. As you know in CP time of coding is important, so solutions are **not** full of comments.*
 
 ----------
 
@@ -11,16 +11,16 @@ Hi! Nice to meet you at my solution archive. Here you can find code of many prob
 This repo contains solutions from: 
 
 Resource                | Account
---------                | ----
+--------                | -------
 [Codeforces][1]         | [link][10]
 [TopCoder][2]           | [link][11]
 [HackerRank][3]         | [link][12]
-[Yandex.Contest][4]     | ------
+[Yandex.Contest][4]     | ---
 [ACMP][5]               | [link][13]
 [E-Olymp][6]            | [link][14]
-[NetOI][7]              | ------
-[QBit][8]               | ------
-[Russian Code Cups][9]  | ------
+[NetOI][7]              | ---
+[QBit][8]               | ---
+[Russian Code Cups][9]  | ---
 
 
 
