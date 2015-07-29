@@ -2,7 +2,7 @@
 
 Hi! Nice to meet you at my solution archive. Here you can find code of many problems. 
 
-<i>P.S. As you know in CP time of coding is important, so solutions are </i>**not**<i> full of comments.</i>
+<i>P.S. As you know in CP time of coding is important, so solutions are <b>not</b> full of comments.</i>
 
 ----------
 
