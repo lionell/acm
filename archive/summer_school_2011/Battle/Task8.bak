@@ -1,0 +1,23 @@
+program RunAway;
+var n, m, x, y, s: longint;
+    b: boolean;
+begin
+read(n, m, x ,y);
+b:=false;
+if (x = y) and (n - x = x - 1) and (m - y = y - 1) then
+ begin
+  s:=2 * (n + m - 1);
+  b:=true;
+ end;
+if (x - 1 = y - 1) and (y - 1 = m - y) and (b = false) then
+ begin
+  s:=3 * m - 2;
+  b:=true;
+ end;
+if (n - x = y - 1) and (y - 1 = m - y) and (b = false) then
+ begin
+  s:=4 * (n - x) + 2 + m;
+  b:=true;
+ end;
+write(s);
+end.

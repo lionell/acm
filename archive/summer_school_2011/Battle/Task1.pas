@@ -1,0 +1,10 @@
+program Cars;
+uses math;
+var s1, s2, v1, v2, a, t: real;
+begin
+read(s1, v1, s2, v2, a);
+t:=(0-1)*(v1*s1+v2*s2-(v1*s2+v2*s1)*cos(a/180*pi))/(v1*v1+v2*v2-2*v1*v2*cos(a/180*pi));
+writeln('Time: ',t);
+t:=sqrt(sqr((s1-v1*t))+sqr((s2-v2*t))-2*(s1-v1*t)*(s2-v2*t)*cos(a/180*pi));
+write(t:0:8);
+end.
