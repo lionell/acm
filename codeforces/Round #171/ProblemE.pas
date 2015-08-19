@@ -1,0 +1,29 @@
+program ProblemE;
+var A: array[1..5000000] of byte;
+    ch: char;
+    i, n, o, d: longint;
+begin
+ assign(input, 'input.txt');
+ reset(input);
+ n:=0;
+ o:=0;
+ d:=0;
+ i:=0;
+ while not(eoln) do
+  begin
+   inc(i);
+   read(ch);
+   if ch = '0' then
+    begin
+     A[i]:=0;
+     inc(n);
+    end
+   else
+    begin
+     A[i]:=1;
+     inc(o);
+    end;
+  end;
+ if o > n + 2 then write(n + 2)
+ else write(o);
+end.

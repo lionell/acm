@@ -1,0 +1,9 @@
+main =>
+	N = read_int(),
+	D = read_int(),
+	I = 1,
+	while (I <= N - 2)
+		printf("%d", 1),
+		I := I + 1
+	end,
+	printf("%d %d", 2, N + D).

@@ -1,0 +1,18 @@
+program ProblemB;
+var s, s1: string;
+    n, d, i: longint;
+begin
+ readln(n, d);
+ read(s);
+ for i:=1 to d do
+  begin
+  s1:=s;
+   if (s[i] = 'B') and (s[i + 1] = 'G') then
+    begin
+     s1[i]:='G';
+     s1[i + 1]:='B';
+    end;
+   s:=s1;
+  end;
+ for i:=1 to n do write(s[i]);
+end.

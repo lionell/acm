@@ -1,0 +1,30 @@
+program ProblemC;
+var A: array[1..100000] of longint;
+    Up, Down: array[1..100000] of longint;
+    n, m, i, l, r: longint;
+begin
+ fillchar(A, sizeof(A), 0);
+ fillchar(Up, sizeof(Up), 0);
+ fillchar(Down, sizeof(Down), 0);
+ read(n, m);
+ for i:=1 to n do read(A[i]);
+ Up[n]:=1;
+ Down[1]:=1;
+ for i:=n - 1 downto 1 do
+  begin
+   if A[i + 1] >= A[i] then Up[i]:=Up[i + 1] + 1
+   else Up[i]:=1;
+  end;
+ for i:=2 to n do
+  begin
+   if A[i - 1] >= A[i] then Down[i]:=Down[i - 1] + 1
+   else Down[i]:=1;
+  end;
+
+ for i:=1 to m do
+  begin
+   read(l, r);
+   if Up[l] + Down[r] >= r - l + 1 then writeln('Yes')
+   else writeln('No');
+  end;
+end.

@@ -1,0 +1,21 @@
+main =>
+	A = read_int(),
+	B = read_int(),
+	C = read_int(),
+	X = 1,
+	Count = 0,
+	while (C - A * X > 0) 
+		if ((C - A * X) mod B == 0) then
+			Count := Count + 1
+		end,
+		X := X + 1
+	end,
+	printf("%d\n", Count),
+	X := 1,
+	while (C - A * X > 0) 
+		if ((C - A * X) mod B == 0) then
+			Y = (C - A * X) div B,
+			printf("%d %d\n", X, Y)
+		end,
+		X := X + 1
+	end.

@@ -1,0 +1,12 @@
+main =>
+	S = read_line(),
+	I = S.length() div 2,
+	while (I > 0)
+		write_char(S[I]),
+		I := I - 1
+	end,
+	I := S.length(),
+	while (I > S.length() div 2)
+		write_char(S[I]),
+		I := I - 1
+	end.

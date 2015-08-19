@@ -1,0 +1,17 @@
+import ordset.
+
+main =>
+	N = read_int(),
+	D = new_ordset(1..1000),
+	I = 1,
+	while (I <= N)
+		A = read_int(),
+		B = read_int(),
+		C = new_ordset(A..B),
+		D := subtract(D, C),
+		I := I + 1
+	end,
+	printf("%d ", D.length()),
+	foreach(T in D)
+		printf("%d ", T)
+	end.

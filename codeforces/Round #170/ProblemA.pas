@@ -1,0 +1,32 @@
+program ProblemA;
+var A: array[1..100] of longint;
+    n, i, s, t, s1, s2: longint;
+begin
+ read(n);
+ for i:=1 to n do read(A[i]) ;
+ read(s, t);
+ if s = t then write('0')
+ else
+  begin
+   s1:=0;
+   s2:=0;
+   i:=s;
+   while i <> t do
+    begin
+     s1:=s1 + A[i];
+     inc(i);
+     if i = n + 1 then i:=1;
+    end;
+   if s <> 1 then i:=s - 1
+   else i:=n;
+   while i <> t do
+    begin
+     s2:=s2 + A[i];
+     dec(i);
+     if i = 0 then i:=n;
+    end;
+   s2:=s2 + A[i];
+   if s1 < s2 then write(s1)
+   else write(s2);
+  end;
+end.
