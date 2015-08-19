@@ -1,0 +1,19 @@
+program Rectangle;{F}
+var n, i, j, d: longint;
+    a: array[0..101, 0..101] of byte;
+begin
+ d:=0;
+ fillchar(a, sizeof(a), 0);
+ read(n);
+ for i:=1 to n do
+  for j:=1 to n do
+   read(a[i, j]);
+ for i:=1 to n do
+  begin
+   for j:=1 to n do
+    begin
+     if (a[i, j] = 1) and (a[i + 1, j] = 1) and (a[i, j + 1] = 1) and (a[i - 1, j] = 0) and (a[i, j - 1] = 0) then inc(d);
+    end;
+  end;
+ write(d);
+end.
