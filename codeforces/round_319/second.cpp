@@ -108,29 +108,30 @@ inline T qpom(T a, T b, T mod = MOD) {
 }
 //endregion
 
+const int MAX_N = 1000001;
+const int MAX_M = 1001;
+
+int a[MAX_N];
+bool dp[MAX_M][MAX_M];
+
 int main() {_
     int n = 0;
-    cin >> n;
-    vector<bool> a(n + 0UL);
-    for (int i = n; i >= n / 2; --i) {
-        for (int j = 2; j * j <= i; ++j) {
-            if (i % j == 0 && __gcd(j, i / j) == 1) {
-                a[j] = a[i / j] = true;
-                a[i] = true;
+    int m = 0;
+    cin >> n >> m;
+    for (int i = 0; i < n; ++i) {
+        cin >> a[i];
+    }
+    if (n <= m) {
+        dp[1][a[0] % m] = true;
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (dp[i][j]) {
+                    dp[i + 1][(j + a[i]) % m] = dp[i + 1][j] = true;
+                }
             }
         }
-        a[i] = !a[i];
+        cout << (dp[n][0] ? "YES" : "NO");
     }
-    for (int i = 2; i <= n / 2; ++i) {
-        a[i] = true;
-    }
-    int ans = 0;
-    for (int i = 0; i <= n; ++i) {
-        ans += a[i];
-    }
-    cout << ans << endl;
-    for (int i = 0; i <= n; ++i) {
-        if (a[i]) cout << i << " ";
-    }
+    else cout << "YES";
     return 0;
 }

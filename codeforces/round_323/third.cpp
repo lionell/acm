@@ -7,9 +7,9 @@
 
 using namespace std;
 
-#ifdef DEBUG
+#ifndef ONLINE_JUDGE
 #define cin in
-ifstream in("/home/lionell/Developing/acm/codeforces/round_323/in.txt");
+ifstream in("/home/lionell/Developing/cp/codeforces/round_323/in.txt");
 #endif
 
 //region Template
@@ -108,8 +108,35 @@ inline T qpom(T a, T b, T mod = MOD) {
 }
 //endregion
 
-int main() {
-    _
+map<int, int, std::greater<int> > m;
+vector<int> ans;
 
+void insert(int x) {
+    m[x]--;
+    for (auto val : ans) {
+        m[__gcd(val, x)] -= 2;
+    }
+    ans.pb(x);
+}
+
+int main() {_
+    int n = 0;
+    cin >> n;
+    for (int i = 0; i < n * n; ++i) {
+        int x = 0;
+        cin >> x;
+        m[x]++;
+    }
+    for (auto x : m) {
+        if (x.second % 2 == 1) insert(x.first);
+    }
+    while (ans.size() < n) {
+        while (m.begin()->second == 0) m.erase(m.begin());
+        insert(m.begin()->first);
+        insert(m.begin()->first);
+    }
+    for (auto x : ans) {
+        cout << x << " ";
+    }
     return 0;
 }

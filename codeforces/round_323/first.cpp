@@ -7,9 +7,9 @@
 
 using namespace std;
 
-#ifdef DEBUG
+#ifndef ONLINE_JUDGE
 #define cin in
-ifstream in("/home/lionell/Developing/acm/codeforces/round_323/in.txt");
+ifstream in("/home/lionell/Developing/cp/codeforces/round_323/in.txt");
 #endif
 
 //region Template
@@ -108,8 +108,24 @@ inline T qpom(T a, T b, T mod = MOD) {
 }
 //endregion
 
-int main() {
-    _
+const int MAX_H = 51;
+bool usedx[MAX_H];
+bool usedy[MAX_H];
 
+int main() {_
+    int n = 0;
+    cin >> n;
+    vector<int> ans;
+    for (int i = 0; i < n * n; ++i) {
+        int a = 0, b = 0;
+        cin >> a >> b;
+        if (!usedx[a] && !usedy[b]) {
+            usedx[a] = usedy[b] = true;
+            ans.pb(i);
+        }
+    }
+    for (auto x : ans) {
+        cout << x + 1 << " ";
+    }
     return 0;
 }
