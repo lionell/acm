@@ -2,51 +2,41 @@
 
 using namespace std;
 
-typedef long long ll;
+const int MAX = 501;
 
-char m[502][502];
-ll dp[502][502];
+char g[MAX][MAX];
+int hor[MAX][MAX];
+int ver[MAX][MAX];
 
 int main() {
     int h, w;
     cin >> h >> w;
     for (int i = 1; i <= h; ++i) {
         for (int j = 1; j <= w; ++j) {
-            cin >> m[i][j];
+            cin >> g[i][j];
         }
     }
     for (int i = 1; i <= h; ++i) {
         for (int j = 1; j <= w; ++j) {
-            if (i > 1) {
-                dp[i][j] += dp[i - 1][j];
-                if (m[i][j] == '.' && m[i - 1][j] == '.')
-                    dp[i][j]++;
-            }
-            if (j > 1) {
-                dp[i][j] += dp[i][j - 1];
-                if (m[i][j] == '.' && m[i][j - 1] == '.')
-                    dp[i][j]++;
-            }
-            if (i > 1 && j > 1) {
-                dp[i][j] -= dp[i - 1][j - 1];
-            }
+            hor[i][j] += hor[i - 1][j];
+            hor[i][j] += hor[i][j - 1];
+            hor[i][j] -= hor[i - 1][j - 1];
+            if (g[i][j] == '.' && g[i][j - 1] == '.')
+                hor[i][j]++;
+            ver[i][j] += ver[i - 1][j];
+            ver[i][j] += ver[i][j - 1];
+            ver[i][j] -= ver[i - 1][j - 1];
+            if (g[i][j] == '.' && g[i - 1][j] == '.')
+                ver[i][j]++;
         }
     }
     int q;
     cin >> q;
-    for (int k = 0; k < q; ++k) {
+    while (q--) {
         int r1, c1, r2, c2;
         cin >> r1 >> c1 >> r2 >> c2;
-        ll ans = dp[r2][c2] - dp[r1 - 1][c2] - dp[r2][c1 - 1] + dp[r1 - 1][c1 - 1];
-        for (int i = r2; i >= r1; --i) {
-            if (m[i][c1 - 1] == '.' && m[i][c1] == '.')
-                ans--;
-        }
-        for (int i = c2; i >= c1; --i) {
-            if (m[r1 - 1][i] == '.' && m[r1][i] == '.')
-                ans--;
-        }
-        cout << ans << endl;
+        cout << hor[r2][c2] - hor[r2][c1] - hor[r1 - 1][c2] + hor[r1 - 1][c1] +
+                        ver[r2][c2] - ver[r2][c1 - 1] - ver[r1][c2] + ver[r1][c1 - 1] << endl;
     }
     return 0;
 }

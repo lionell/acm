@@ -12,9 +12,7 @@ int main() {
         ull k = (1ULL << (i + 1)) - 1ULL;
         for (int j = 0; j < i; ++j) {
             ull p = k - (1ULL << j);
-            if (a <= p && p <= b) {
-                ans++;
-            }
+            ans += a <= p && p <= b;
         }
     }
     cout << ans;
