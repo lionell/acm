@@ -1,16 +1,6 @@
-//
-// Created by lionell on 7/26/15.
-// Copyright (c) 2015 Ruslan Sakevych. All rights reserved.
-//
-
 #include <bits/stdc++.h>
 
 using namespace std;
-
-#ifdef DEBUG
-#define cin in
-ifstream in("/home/lionell/Developing/acm/hackerrank/algorithms/warmup/solve-me-first/in.txt");
-#endif
 
 //region Template
 #define endl                    "\n"
@@ -21,11 +11,10 @@ ifstream in("/home/lionell/Developing/acm/hackerrank/algorithms/warmup/solve-me-
 #define sd                      second
 #define all(x)                  begin(x), end(x)
 #define sz(x)                   (int)((x).size())
-#define len(x)                  (int)((x).length())
 #define set(x, y)               fill(all(x), y)
 #define mset(x, y)              memset(x, y, sizeof(x))
 
-#define _                       ios_base::sync_with_stdio(false); cin.tie(0);
+#define _                      ios_base::sync_with_stdio(false); cin.tie(0);
 #define debug(x)                cout << #x << "=" << x << "\n"
 #define rep(i, begin, end)      for (__typeof(end) i = (begin) - ((begin) > (end)); i != (end) - ((begin) > (end)); i += 1 - 2 * ((begin) > (end)))
 
@@ -72,8 +61,6 @@ template<typename T> inline T qpom(T a, T b, T mod = MOD) { T r = 1; while (b > 
 //endregion
 
 int main() {_
-    int a = 0, b = 0;
-    cin >> a >> b;
-    cout << a + b;
+
     return 0;
 }
